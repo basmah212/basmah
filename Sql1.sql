@@ -47,13 +47,27 @@ faculity varchar(20));
 create table Thesis
 (
 serialNumber int primary key identity,
-field
-type
-title
-startDate
-endDate
-defenseDate
+field varchar(20),
+type bit,
+title varchar(50),
+startDate datetime not null,
+endDate datetime not null,
+defenseDate datetime not null,
 years as (Year(startDate)-Year(endDate)),
-grade 
-payment_id int
-noExtension
+grade decimal,
+payment_id int,	
+noExtension int);
+create table Publication
+(
+id int primary key identity,
+title varchar (50),
+date datetime,
+place varchar(50),
+accepted bit,
+host varchar(50));
+create table Payment
+(
+id int primary key identity,
+amount decimal,
+no_installments int,
+fundPercentage decimal);
