@@ -1,7 +1,7 @@
 ﻿create database T23_10849;
 create table PostGradUser
 (
-id int Primary Key Identity,
+id int Primary Key identity,
 email varchar(50), 
 password varchar(20)
 );
@@ -21,7 +21,7 @@ last_name varchar(20),
 type bit,
 faculty varchar(20),
 address varchar(50),
-GPA decimal (3,2),
+GPA decimal,
 undergradID int not null
 );
 
@@ -79,16 +79,16 @@ create table Thesis
 (
 serialNumber int primary key identity,
 field varchar(20),
-type bit,
+type varchar(20),
 title varchar(50),
-startDate datetime not null,
-endDate datetime not null,
-defenseDate datetime not null,
+startDate date not null,
+endDate date default null,
+defenseDate datetime default null,
 years as (Year(startDate)-Year(endDate)),
 grade decimal,
-payment_id int,
+payment_id int default null,
 foreign key (payment_id) references Payment on delete cascade on update cascade,
-noExtension int
+noExtension int default 0
 );
 
 create table Publication
@@ -124,7 +124,7 @@ create table GUCianProgressReport
 (
 sid int,
 progressReportNo int,
-progressReportDate datetime,
+progressReportDate date,
 eval int, 
 sate int,
 thesisSerialNumber int,
@@ -139,7 +139,7 @@ create table NonGUCianProgressReport
 (
 sid int,
 progressReportNo int,
-progressReportDate datetime,
+progressReportDate date,
 eval int,
 sate int,
 thesisSerialNumber int,
@@ -152,7 +152,7 @@ foreign key (Sup_id) references Supervisor
 
 create table Installment
 (
-date datetime,
+date date,
 payment_id int,
 amount decimal,
 done bit,
