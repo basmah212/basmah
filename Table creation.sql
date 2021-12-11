@@ -21,7 +21,7 @@ last_name varchar(20),
 type bit,
 faculty varchar(20),
 address varchar(50),
-GPA decimal,
+GPA decimal(3,2),
 undergradID int not null
 );
 
@@ -54,7 +54,7 @@ phone varchar(20)
 create table Course
 (
 id int primary key identity,
-fees decimal (3,2),
+fees decimal,
 creditHours int,
 code varchar(10)
 );
@@ -72,7 +72,7 @@ create table Payment
 id int primary key identity,
 amount decimal,
 no_installments int,
-fundPercentage decimal
+fundPercentage decimal(3,2)
 );
 
 create table Thesis
@@ -85,7 +85,7 @@ startDate date not null,
 endDate date default null,
 defenseDate datetime default null,
 years as (Year(startDate)-Year(endDate)),
-grade decimal,
+grade decimal(3,2),
 payment_id int default null,
 foreign key (payment_id) references Payment on delete cascade on update cascade,
 noExtension int default 0
@@ -115,7 +115,7 @@ create table Defense
 serialNumber int,
 date datetime,
 location varchar (15),
-grade decimal
+grade decimal(3,2) default null,
 Primary key (serialNumber,date),
 foreign key (serialNumber) references Thesis on delete cascade on update cascade
 );
@@ -123,10 +123,10 @@ foreign key (serialNumber) references Thesis on delete cascade on update cascade
 create table GUCianProgressReport
 (
 sid int,
-progressReportNo int,
+progressReportNo int identity,
 progressReportDate date,
 eval int, 
-sate int,
+state int,
 thesisSerialNumber int,
 Sup_id int,
 Primary key (sid,progressReportNo),
@@ -138,7 +138,7 @@ foreign key (Sup_id) references Supervisor
 create table NonGUCianProgressReport
 (
 sid int,
-progressReportNo int,
+progressReportNo int identity,
 progressReportDate date,
 eval int,
 sate int,
@@ -175,7 +175,7 @@ create table NonGucianStudentTakeCourse
 (
 sid int,
 cid int,
-grade decimal,
+grade decimal (3,2) default null,
 primary key(sid,cid),
 foreign key (sid) references NonGucianStudent on delete cascade on update cascade,
 foreign key (cid) references Course on delete cascade on update cascade
@@ -208,7 +208,7 @@ create table ExaminerEvaluateDefense
 date datetime,
 serialNo int,
 examinerId int,
-comment varchar(300),
+comment varchar(300) default Null,
 primary key (date,serialNo,examinerId),
 foreign key (serialNo,date) references Defense,
 foreign key (examinerId) references Examiner
