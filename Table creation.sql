@@ -21,8 +21,8 @@ last_name varchar(20),
 type bit,
 faculty varchar(20),
 address varchar(50),
-GPA decimal(3,2),
-undergradID int not null
+GPA decimal(3,2) default null,
+undergradID int default null
 );
 
 create table NonGucianStudent
@@ -41,7 +41,7 @@ create table GUCStudentPhoneNumber
 (
 id int primary key,
 foreign key (id) references GucianStudent on delete cascade on update cascade,
-phone varchar(20)
+phone varchar(20) 
 );
 
 create table NonGUCStudentPhoneNumber

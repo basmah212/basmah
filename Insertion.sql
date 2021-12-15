@@ -36,7 +36,6 @@ insert into GucianStudent (id,first_name,last_name,type,faculty,address,GPA,unde
 insert into GucianStudent (id,first_name,last_name,type,faculty,address,GPA,undergradID)values 
 (5,'Omar','Ehab',1,'Business informatics','6th October',2.0,11905);
 --GUCStudentPhoneNumber insertion
-insert into GUCStudentPhoneNumber values (1,'+20 157 889 1397');
 insert into GUCStudentPhoneNumber values (2,'+20 109 043 3634');
 insert into GUCStudentPhoneNumber values (3,'+20 152 883 8134');
 insert into GUCStudentPhoneNumber values (4,'+20 115 831 3347');
