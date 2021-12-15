@@ -1,4 +1,4 @@
-﻿create database T23_10849;
+﻿--create database T23_10849;
 create table PostGradUser
 (
 id int Primary Key identity,
@@ -129,6 +129,7 @@ eval int,
 state int,
 thesisSerialNumber int,
 Sup_id int,
+description varchar(200) default '',
 Primary key (sid,progressReportNo),
 foreign key (sid) references GucianStudent on delete cascade on update cascade,
 foreign key (thesisSerialNumber) references Thesis on delete cascade on update cascade,
@@ -141,9 +142,10 @@ sid int,
 progressReportNo int identity,
 progressReportDate date,
 eval int,
-sate int,
+state int,
 thesisSerialNumber int,
 Sup_id int,
+description varchar(200) default '',
 Primary key (sid,progressReportNo),
 foreign key (sid) references NonGucianStudent on delete cascade on update cascade,
 foreign key (thesisSerialNumber) references Thesis on delete cascade on update cascade,

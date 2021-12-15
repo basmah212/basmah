@@ -155,18 +155,18 @@ select * from NonGUCianStudentRegisterThesis;
 --on s.id=t.sid inner join Thesis th on t.serial_no=th.serialNumber;
 ------------------------------------------------------------------------------------- 
 --GUCianProgressReport insertion
-insert into GUCianProgressReport values (1,'11/11/2019',8,2,1,13);
-insert into GUCianProgressReport values (2,'1/8/2016',3,7,2,13);
-insert into GUCianProgressReport values (3,'4/6/2019',4,2,3,14);
-insert into GUCianProgressReport values (4,'6/7/2017',10,6,4,14);
-insert into GUCianProgressReport values (5,'5/2/2015',3,1,5,13);
+insert into GUCianProgressReport (sid,progressReportDate,eval,state,thesisSerialNumber,Sup_id)values (1,'11/11/2019',8,2,1,13);
+insert into GUCianProgressReport (sid,progressReportDate,eval,state,thesisSerialNumber,Sup_id)values (2,'1/8/2016',3,7,2,13);
+insert into GUCianProgressReport (sid,progressReportDate,eval,state,thesisSerialNumber,Sup_id)values (3,'4/6/2019',4,2,3,14);
+insert into GUCianProgressReport (sid,progressReportDate,eval,state,thesisSerialNumber,Sup_id)values (4,'6/7/2017',10,6,4,14);
+insert into GUCianProgressReport (sid,progressReportDate,eval,state,thesisSerialNumber,Sup_id)values (5,'5/2/2015',3,1,5,13);
 select * from GUCianProgressReport;
 --NonGUCianProgressReport insertion
-insert into NonGUCianProgressReport values (6,'11/11/2017',8,2,6,14);
-insert into NonGUCianProgressReport values (7,'1/8/2021',3,7,7,14);
-insert into NonGUCianProgressReport values (8,'4/6/2021',4,2,8,13);
-insert into NonGUCianProgressReport values (9,'9/12/2021',10,6,9,14);
-insert into NonGUCianProgressReport values (10,'5/2/2012',3,1,10,13);
+insert into NonGUCianProgressReport (sid,progressReportDate,eval,state,thesisSerialNumber,Sup_id)values (6,'11/11/2017',8,2,6,14);
+insert into NonGUCianProgressReport (sid,progressReportDate,eval,state,thesisSerialNumber,Sup_id)values (7,'1/8/2021',3,7,7,14);
+insert into NonGUCianProgressReport (sid,progressReportDate,eval,state,thesisSerialNumber,Sup_id)values (8,'4/6/2021',4,2,8,13);
+insert into NonGUCianProgressReport (sid,progressReportDate,eval,state,thesisSerialNumber,Sup_id)values (9,'9/12/2021',10,6,9,14);
+insert into NonGUCianProgressReport (sid,progressReportDate,eval,state,thesisSerialNumber,Sup_id)values (10,'5/2/2012',3,1,10,13);
 select * from NonGUCianProgressReport;
 ------------------------------------------------------------------------------------- 
 -- Courses insertion
